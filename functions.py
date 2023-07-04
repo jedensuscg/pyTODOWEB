@@ -80,11 +80,7 @@ def load_config():
             if not os.path.exists(default_list_path+last_file):
                 last_file = '-NOLOAD-'
                 save_config(last_file,file_list)
-<<<<<<< HEAD
-            #print("Opening last file called: "+ last_file)
-=======
             print("Opening last file called: "+ last_file)
->>>>>>> e301b73 (inital commit to new project)
             file_list = ast.literal_eval(config['DEFAULT']['filelist'])
         except:
             print("Error loading Config File: Creating new file.")
@@ -99,10 +95,7 @@ def format_input(input):
     return input.lower().strip()
 
 def show_list(todos):
-<<<<<<< HEAD
-=======
     print("\n** TODO LIST **\n")
->>>>>>> e301b73 (inital commit to new project)
     if len(todos) > 0:
         for index, item in enumerate(todos):
             item = item.replace("\n", "")
@@ -116,10 +109,7 @@ def console_add_bracket(todo):
 
 def write_to_file(todo_list, todo_file, path=default_list_path):
         save_path = f'{path}{todo_file}'
-<<<<<<< HEAD
-=======
         print(save_path)
->>>>>>> e301b73 (inital commit to new project)
         with open(save_path, 'w', encoding="utf-8") as file:
             for i in todo_list:
                 if i[0] != "[":
@@ -183,11 +173,7 @@ def prompt_for_file():
                     except IndexError:
                         print("No file exist for number entered.")
                     else:
-<<<<<<< HEAD
-                        #title_bar(file)
-=======
                         title_bar(file)
->>>>>>> e301b73 (inital commit to new project)
                         return file_to_open
             
 def show_options(file_to_edit):
@@ -214,11 +200,7 @@ def show_options(file_to_edit):
                 else:
                     print("Invalid Selection")
         elif selection == 'exit':
-<<<<<<< HEAD
-            #title_bar(file_to_edit)
-=======
             title_bar(file_to_edit)
->>>>>>> e301b73 (inital commit to new project)
             break
         else:
             print("Invalid Selection")
@@ -230,13 +212,8 @@ def show_file_menu(file_to_edit, path=default_list_path, gui = False):
             user_action = format_input(input("Please make a selection:\n1: Select a different TODO file\n2: Add new TODO file \nType exit to cancel.\n"))
             if user_action == '1':
                 file_to_edit = prompt_for_file()
-<<<<<<< HEAD
-                #title_bar(file_to_edit)
-                #print_msg_box(f'Changed to TODO list titled {file_to_edit[:-4].title().replace("_"," ")}')
-=======
                 title_bar(file_to_edit)
                 print_msg_box(f'Changed to TODO list titled {file_to_edit[:-4].title().replace("_"," ")}')
->>>>>>> e301b73 (inital commit to new project)
                 save_config(file_to_edit, file_list)
                 return file_to_edit
                 
@@ -245,16 +222,6 @@ def show_file_menu(file_to_edit, path=default_list_path, gui = False):
                 file_location = f'{path}{new_file}'
                 with open(file_location, 'w') as fp:
                     pass
-<<<<<<< HEAD
-                #print_msg_box(f'Created a new TODO list named {file_to_edit[:-4].title().replace("_"," ")}')
-                while True:
-                    user_action = format_input(input("Do you want to edit this new TODO now? Y/N: "))
-                    if user_action == 'y':
-                        #title_bar(new_file)
-                        file_to_edit = new_file
-                        save_config(file_to_edit, file_list)
-                        #print_msg_box(f'Switched to new TODO list named {file_to_edit[:-4].title().replace("_"," ")}')
-=======
                 print_msg_box(f'Created a new TODO list named {file_to_edit[:-4].title().replace("_"," ")}')
                 while True:
                     user_action = format_input(input("Do you want to edit this new TODO now? Y/N: "))
@@ -263,7 +230,6 @@ def show_file_menu(file_to_edit, path=default_list_path, gui = False):
                         file_to_edit = new_file
                         save_config(file_to_edit, file_list)
                         print_msg_box(f'Switched to new TODO list named {file_to_edit[:-4].title().replace("_"," ")}')
->>>>>>> e301b73 (inital commit to new project)
                         return file_to_edit
                     elif user_action == 'n':
                         file_to_edit = file_to_edit
@@ -272,22 +238,13 @@ def show_file_menu(file_to_edit, path=default_list_path, gui = False):
                     else:
                         print("Invalid Selection")
             elif user_action == 'exit':
-<<<<<<< HEAD
-                #title_bar(file_to_edit)
-=======
                 title_bar(file_to_edit)
->>>>>>> e301b73 (inital commit to new project)
                 break
             else:
                 print("Invalid Selection")
     else:
-<<<<<<< HEAD
-        #title_bar(file_to_edit)
-        #print_msg_box(f'Changed to TODO list titled {file_to_edit[:-4].title().replace("_"," ")}')
-=======
         title_bar(file_to_edit)
         print_msg_box(f'Changed to TODO list titled {file_to_edit[:-4].title().replace("_"," ")}')
->>>>>>> e301b73 (inital commit to new project)
         save_config(file_to_edit, file_list)
 
 def get_todos(todo_file = "todos.txt"):
@@ -311,11 +268,7 @@ def get_todos(todo_file = "todos.txt"):
 
 def add_new_file(name = '',gui = True):
     if not gui:
-<<<<<<< HEAD
-        #title_bar("Creating New TODO")
-=======
         title_bar("Creating New TODO")
->>>>>>> e301b73 (inital commit to new project)
         name = format_input(input("Please enter a name for the initial TODO list:\n"))
         name = name.replace(" ","_")
         file_name = name + ".txt"
@@ -329,11 +282,7 @@ def add_new_file(name = '',gui = True):
         save_config(file_to_edit,file_list)
 
 def delete_file(file):
-<<<<<<< HEAD
-    #title_bar("Deleting Todo List")
-=======
     title_bar("Deleting Todo List")
->>>>>>> e301b73 (inital commit to new project)
     if os.path.exists(default_list_path+file):
         os.remove(default_list_path+file)
         try:
@@ -342,11 +291,6 @@ def delete_file(file):
             pass
     
 
-<<<<<<< HEAD
-def add_task(user_action, file_to_edit):
-
-    todo = user_action
-=======
 def add_task(user_action, file_to_edit, undo = False, gui = False):
     global undo_opt
     if not gui:
@@ -356,7 +300,6 @@ def add_task(user_action, file_to_edit, undo = False, gui = False):
             todo = user_action
         else:
             todo = user_action[4:]
->>>>>>> e301b73 (inital commit to new project)
     message = todo
     todo = console_add_bracket(todo)
     todos = get_todos(file_to_edit)
@@ -366,16 +309,11 @@ def add_task(user_action, file_to_edit, undo = False, gui = False):
     except:
         print("Failed to save file to disk.")
     else:
-<<<<<<< HEAD
-        pass
-        #print_msg_box(f'Added {message} to list.')
-=======
         if not undo:
             print_msg_box(f'Added {message} to list.')
         else:
             print_msg_box(f'Added {message} to list via UNDO command.','UNDO','Type UNDO to REDO.')
         undo_opt.update({'last':'add'})
->>>>>>> e301b73 (inital commit to new project)
 
 def edit_task(user_action, file_to_edit, gui=False, new_edit = ""):
     todos = get_todos(file_to_edit)
@@ -396,11 +334,7 @@ def edit_task(user_action, file_to_edit, gui=False, new_edit = ""):
         else:
             if not gui:
                 if user_action[7:] == "":
-<<<<<<< HEAD
-                    #print_msg_box(f'Enter the new task for todo task {old_todo[4:].capitalize()}', "DIRECTIONS", " Type COMMAND for more info.")
-=======
                     print_msg_box(f'Enter the new task for todo task {old_todo[4:].capitalize()}', "DIRECTIONS", " Type COMMAND for more info.")
->>>>>>> e301b73 (inital commit to new project)
                     edit_todo = input()
                 else:
                     if user_action[6] != " ":
@@ -419,68 +353,6 @@ def edit_task(user_action, file_to_edit, gui=False, new_edit = ""):
             else:
                 print_msg_box(f'Replaced TODO task successfully \'{old_todo[4:].capitalize()}\' with \'{edit_todo[4:].capitalize()}\' ')
 
-<<<<<<< HEAD
-def mark_task(user_action, file_to_edit, mark = True):
-    todos = get_todos(file_to_edit)
-
-    if mark:
-        selection = user_action
-        text = todos[selection]
-        result = ''
-        result = "[X] " + text[4:]
-        todos[selection] = result
-        try:
-            write_to_file(todos,file_to_edit)
-        except:
-            print("Failed to save file to disk.")
-        else:
-            #title_bar(file_to_edit)
-            #print_msg_box(f'Task: {todos[selection][4:].capitalize()} marked Complete.')
-            undo_opt.update({'last':'mark','data':selection})
-    else:
-        selection = user_action
-        text = todos[selection]  
-        result = ''
-        result = "[ ] " + text[4:]
-        todos = get_todos(file_to_edit)
-        todos[selection] = result
-        try:
-            write_to_file(todos,file_to_edit)
-        except:
-            print("Failed to save file to disk.")
-        else:
-            #title_bar(file_to_edit)
-            #print_msg_box(f'Task: {todos[selection][4:].capitalize()} UNmarked.')
-            undo_opt.update({'last':'unmark','data':selection}) 
-
-def remove_marked_tasks(file_to_edit):
-    while True:
-        new_todos = []
-        removed_todos = []
-        todos = get_todos(file_to_edit)
-        original_todos = todos
-        for i in todos:
-            if i[1] != 'X':
-                new_todos.append(i)
-            elif i[1] == 'X':
-                removed_todos.append(i)
-        todos = new_todos
-        #print_msg_box(f'')
-        if len(removed_todos) == 0:
-            #title_bar(file_to_edit)
-            #print_msg_box("No tasked were removed as none were marked as Complete.", "NOTICE", "Type mark <task#> to mark tasks.")
-            break
-        else:
-            try:
-                write_to_file(todos,file_to_edit)
-            except:
-                print("Failed to save file to disk.")
-            else:
-                #title_bar(file_to_edit)
-                #print_msg_box(f'Removed {len(removed_todos)} successfully')
-                undo_opt.update({'last':'remove','data':original_todos})
-                break
-=======
 def mark_task(user_action, file_to_edit, mark = True, undo = False, gui=False):
     global undo_opt
     todos = get_todos(file_to_edit)
@@ -594,7 +466,6 @@ def remove_marked_tasks(file_to_edit, gui = False, confirm = False):
         else:
             title_bar(file_to_edit)
             print_msg_box("You did not type 'y' or 'n'", "ERROR", "")
->>>>>>> e301b73 (inital commit to new project)
         
 def delete_task(user_action, file_to_edit, undo = False, gui = False):
     global undo_opt
@@ -627,25 +498,16 @@ def delete_task(user_action, file_to_edit, undo = False, gui = False):
             print_msg_box("No task with that number is in your list.",'ERROR','Enter a valid list number.')
         else:
             if undo:
-<<<<<<< HEAD
-                #print_msg_box(f'Removed task \'{removed_item[4:]}\' via UNDO command', 'UNDO', 'type UNDO to REDO this command')
-                undo_opt.update({'last':'delete','data':removed_item})
-            else:
-                #print_msg_box(f'Removed task \'{removed_item[4:]}\' from list')
-=======
                 print_msg_box(f'Removed task \'{removed_item[4:]}\' via UNDO command', 'UNDO', 'type UNDO to REDO this command')
                 undo_opt.update({'last':'delete','data':removed_item})
             else:
                 print_msg_box(f'Removed task \'{removed_item[4:]}\' from list')
->>>>>>> e301b73 (inital commit to new project)
                 undo_opt.update({'last':'delete','data':removed_item})
             try:
                 write_to_file(todos,file_to_edit)
             except:
                 print("Failed to save file to disk.")   
 
-<<<<<<< HEAD
-=======
 def undo(undo, file_to_edit, gui = False):
     global undo_opt
     match undo['last']:
@@ -665,7 +527,6 @@ def undo(undo, file_to_edit, gui = False):
             write_to_file(todos,file_to_edit)
             print_msg_box("Undo 'Remove All Marked'", "NOTICE", "No Undo Available")
               
->>>>>>> e301b73 (inital commit to new project)
 def title_bar(file_to_edit):
     clear()
     print('----------------------------TERMINAL OPERATED DAILY ORGANIZER----------------------------')
