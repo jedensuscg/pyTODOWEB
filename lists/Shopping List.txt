@@ -1,4 +1,0 @@
-[ ] Milk
-[ ] Cheese
-[ ] Bread
-[ ] Apples
