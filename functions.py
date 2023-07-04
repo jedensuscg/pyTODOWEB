@@ -444,25 +444,6 @@ def delete_task(user_action, file_to_edit, undo = False, gui = False):
             except:
                 print("Failed to save file to disk.")   
 
-def undo(undo, file_to_edit, gui = False):
-    global undo_opt
-    match undo['last']:
-        case "add":
-            selection = len(get_todos(file_to_edit))
-            delete_task(selection, file_to_edit, undo = True, gui = gui)
-        case 'delete':
-            add_task(undo['data'],file_to_edit, undo = True, gui = gui)
-        case 'mark':
-            mark_task(undo['data'],file_to_edit, mark = False, undo = True,gui = gui)
-        case 'unmark':
-            mark_task(undo['data'],file_to_edit, mark = True, undo = True,gui = gui)
-        case 'remove':
-            todos = []
-            for todo in undo['data']:
-                todos.append(todo)
-            write_to_file(todos,file_to_edit)
-            #print_msg_box("Undo 'Remove All Marked'", "NOTICE", "No Undo Available")
-              
 def title_bar(file_to_edit):
     clear()
     print('----------------------------TERMINAL OPERATED DAILY ORGANIZER----------------------------')
