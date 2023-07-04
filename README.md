@@ -18,5 +18,12 @@ This method includes both the CLI and GUI options, as well as a set of pre-creat
 3. Inside the folder created, click on either gui_todo.exe or cli_todo.exe
 
 **Method Two - Individual Executable**
-This method allows to down a single file, either gui_todo.exe or cli_todo.exe. No precreated lists or configs are included. The first time the program is run, it will generate a default list called My List. You can then add any new lists.
+This method allows to down a single file, either gui_todo.exe or cli_todo.exe. No precreated lists or configs are included. 
+1. Download the method you want.
+2. Create a new folder to store this file in. Call it anything you want, such as pyTODO.
+3. The first time the program is run, it will generate a default list called My List. You can then add any new lists.
+
+
+**What if I want to use the other option later?**
+To begin using a different interface option, simple download the new file you want and place it in the SAME folder as previously created so that it can share the same lists you already worked on.
 
