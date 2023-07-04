@@ -11,6 +11,7 @@ It expanded into a rich feature application that I built onto over the course of
 - Command Line version has full UNDO capabilites
 
 *Downloads can be found [HERE](https://github.com/jedensuscg/pyTODOWEB/releases/tag/v1.0.0)**
+
 ###How To Use
 **Method One - Entire Package**
 This method includes both the CLI and GUI options, as well as a set of pre-created lists.
