@@ -99,7 +99,7 @@ with st.sidebar:
     display_filelist()
     st.write("Currently, adding or deleting lists in the web version is not possible.")
     st.write("Use the desktop version for full functionality. The desktop version can be downloaded from my github")
-    st.write('[Download Here](https://github.com/jedensuscg/pyTODOWEB/releases/tag/v1.0.0)')
+    st.write('[Download Here](https://github.com/jedensuscg/pyTODO/releases/tag/v1.0.0)')
     st.write('The desktop version includes a full command line and UI options.')
 
 
